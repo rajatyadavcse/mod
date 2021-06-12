@@ -1,0 +1,1 @@
+function myFunction(e){"topnav"===document.getElementById(e).className?document.getElementById(e).className+=" responsive":document.getElementById(e).className="topnav"}
