@@ -21,12 +21,12 @@
       <!-- <img class="mb-4" src="https://p7.hiclipart.com/preview/201/51/681/computer-icons-customer-service-user-others.jpg" alt="" width="72" height="72"> -->
 
         <label for="firstName" class="sr-only">First Name</label>
-        <input type="text" name="firstName" ng-model="firstName" id="firstName" (change)="firstName('msg1')" [(ngModel)]="mentor.firstName" pattern="^[A-Za-z -]+$"  class="form-control" placeholder="First Name" required>
+        <input type="text" name="firstName" ng-model="firstName" id="firstName" (change)="firstName()" [(ngModel)]="mentor.firstName" pattern="^[A-Za-z -]+$"  class="form-control" placeholder="First Name" required>
         <span style="color:red" id="msg1"></span>
         <!-- <span style="color: red" ng-show="myForm.firstName.$touched && myForm.firstName.$invalid">The name is required.</span> -->
         <br>
       <label for="lastName" class="sr-only">Last Name</label>
-      <input type="text" id="LastName" name="lastName" class="form-control" (change)="lastName('msg2')" [(ngModel)]="mentor.lastName" placeholder="Last Name" required>
+      <input type="text" id="LastName" name="lastName" class="form-control" (change)="lastName()" [(ngModel)]="mentor.lastName" placeholder="Last Name" required>
       <span style="color:red" id="msg2"></span>
       <br>
       <label for="userName" class="sr-only">Email address</label>

@@ -19,11 +19,11 @@
   </div>
   <form class="form-signin">
             <label for="firstName" class="sr-only">First Name</label>
-        <input type="text" name="firstName" ng-model="firstName" id="firstName" (change)="firstName('msg1')" [(ngModel)]="user.firstName" pattern="^[A-Za-z -]+$"  class="form-control" placeholder="First Name" required>
+        <input type="text" name="firstName" ng-model="firstName" id="firstName" (change)="firstName()" [(ngModel)]="user.firstName" pattern="^[A-Za-z -]+$"  class="form-control" placeholder="First Name" required>
         <span style="color:red" id="msg1"></span>
         <br>
    
-        <input type="text" id="LastName" name="lastName" class="form-control" (change)="lastName('msg2')" [(ngModel)]="user.lastName" placeholder="Last Name" required>
+        <input type="text" id="LastName" name="lastName" class="form-control" (change)="lastName()" [(ngModel)]="user.lastName" placeholder="Last Name" required>
         <span style="color:red" id="msg2"></span>
         <br>
     <label for="userName" class="sr-only">Email address</label>

@@ -8,7 +8,7 @@ import { Mentor } from '../models/mentor.model';
   styleUrls: ['./mentormenu.component.css']
 })
 export class MentormenuComponent implements OnInit {
-  mentor:Mentor[];
+  mentor:Mentor;
 
 constructor() { 
   if(sessionStorage.length!=0)

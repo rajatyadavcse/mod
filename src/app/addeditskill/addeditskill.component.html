@@ -26,7 +26,7 @@
           <tr>
             <th scope="col"></th>
             <th scope="col">Skills</th>
-            <th scope="col">Prerequisites</th>
+            <th scope="col">prequesites</th>
             <th scope="col">TOC</th>
             <th scope="col">Remove</th>
           </tr>
@@ -35,7 +35,7 @@
           <tr *ngFor="let skill of skills;index as i">
             <th scope="row">{{i+1}}</th>
             <td>{{skill.name}}</td>
-            <td>{{skill.prerequisites}}</td>
+            <td>{{skill.prequesites}}</td>
             <td>{{skill.toc}}</td>
 
             <td><button class="btn btn-success" (click)="deleteSkill(skill)">Remove</button> </td>
@@ -67,7 +67,7 @@
               <option value="PHP">PHP</option>
             </select>
             <br>
-            <input name="prerequisites" [(ngModel)]="skill.prerequisites" type="text" placeholder="Prerequisites" class="form-control" required>
+            <input name="prequesites" [(ngModel)]="skill.prequesites" type="text" placeholder="prequesites" class="form-control" required>
             <br>
             <input name="toc" [(ngModel)]="skill.toc" type="text" placeholder="Description" class="form-control" required>
             <button class="btn btn-lg btn-primary btn-block" style="margin-top:10px; background-color:#333;" (click)="createSkill(skill)" type="button">Add Skill</button>
