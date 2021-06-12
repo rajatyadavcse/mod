@@ -1,0 +1,58 @@
+
+<body class="text-center">
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="topnav" id="myTopnav">
+        <a routerLink="/adminmenu" >Home</a>
+        <a routerLink="/addedittechnology">Add/Edit Technologies</a>
+        <a routerLink="/addeditskills">Add/Edit Skills</a>        
+        
+        <a routerLink="/blockuser" class="active">Block/Unblock User</a>
+        <a routerLink="/blockmentor">Block/Unblock Mentor</a>
+        <a routerLink="/addedittraining">Add/Edit Training</a>
+        <a (click)="logout()" style="float:right">Logout</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction('myTopnav')">
+            <!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="32px" id="Layer_1" fill="white" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+        </a>
+      </div>
+      <div class="container">
+        <h1 class="display-4">Block/Unblock User</h1>
+        <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+      </div>
+  </div>
+  <div class="table-responsive-md" style="width:60vw;">
+          <table class="table table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">UserName</th>
+              <th scope="col">Block/Unblock</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let us of userArr">
+              <th scope="row">{{us.id}}</th>
+              <th scope="row">{{us.firstName}} {{us.lastName}}</th>
+              <td scope="row">{{us.userName}}</td>
+      
+              <td *ngIf="us.active"><button  (click)="block(us.id)" class="btn btn-danger">Block</button> </td>
+              <td *ngIf="!us.active"><button  (click)="unblock(us.id)" class="btn btn-success">Unblock</button> </td>
+            </tr>
+            <!-- <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+            
+              <td><button class="btn btn-success">Unblock</button> </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Adam</td>
+      
+              <td><button class="btn btn-success">Unblock</button> </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+  
+  </body>

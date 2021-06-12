@@ -1,0 +1,47 @@
+<body class="text-center noscroll">
+
+        <div class="jumbotron jumbotron-fluid">
+          <div class="topnav" id="myTopnav">
+            <a routerLink="/">Home</a>
+            <a routerLink="/login" class="active">Login</a>
+            <a routerLink="/signup">Sign Up</a>
+            <a routerLink="/signupformentor">Sign Up as Mentor</a>
+            <a routerLink="/">Contact</a>
+            <a routerLink="/">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction('myTopnav')">
+                <!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="32px" id="Layer_1" fill="white" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+            </a>
+          </div>
+          <div class="container">
+            <h1 class="display-4">Login</h1>
+           
+          </div>
+        </div>
+        <form class="form-signin">
+          
+          <label for="loginType" class="sr-only">Login Type</label>
+          <select [(ngModel)]="role" name="dropdown" class="form-control" required>
+              <option [ngValue]="undefined" hidden selected disabled><p class="text-muted">Login Type</p></option>
+              <option value="User">User</option>
+              <option value="Mentor">Mentor</option>
+              <option value="Admin">Admin</option>
+            </select>
+            <br>
+          <label for="userName" class="sr-only">Email address</label>
+          <input type="email" name="userName" id="userName" [(ngModel)]="userName"class="form-control" placeholder="Email address" required>
+          <br>
+          <div class="input-group mb-3">
+          <label for="password" class="sr-only">Password</label>
+          <input #x type="password" name="password" id="password" [(ngModel)]="password" class="form-control" placeholder="Password" required>
+          <div id="icon" class="input-group-append">
+              <span class="add-on btn btn-primary form-control form-signin" (click)="x.type=x.type=='password'?'text':'password'; y.className=y.className=='fa fa-eye'?'fa fa-eye-slash':'fa fa-eye'"><i #y class="fa fa-eye"></i></span> 
+            </div>
+          </div><br>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="check()">Login</button>
+          <div class="mt-3 mb-2">
+              Don't have an account?<a routerLink="/signup">Sign Up</a>
+            </div>
+          <p class="mt-3 mb-2 text-muted">&copy; Rajat Yadav</p>
+        </form>
+      </body>
+      

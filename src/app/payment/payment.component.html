@@ -1,0 +1,73 @@
+<body class="text-center">
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="topnav" id="myTopnav">
+        <a routerLink="/usermenu" >Home</a>
+         
+        <a routerLink="/payment" class="active">Payments</a>
+        <a routerLink="/usercompletedtraining">Completed Trainings</a>
+        <a routerLink="/usercurrenttraining">Current Trainings</a>
+        <a (click)="logout()" style="float:right">Logout</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction('myTopnav')">
+     <!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="32px" id="Layer_1" fill="white" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+        </a>
+      </div>
+      <div class="" >
+        <h2 class="display-4">Payment</h2>
+        
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-25" style="margin-left: auto ; margin-right:auto; width:30vw">
+      <div class="container" >
+        <h4>Payment Details<span class="price" style="color:black"><i class="fa fa-shopping-cart"></i></span></h4>
+        <!-- <div ng-model="train = training"> -->
+        <p *ngIf="training.technology">{{training.technology.techName}}<span class="price">{{training.fees}}</span></p>
+        <p>Tax <span class="price">0</span></p>
+        <hr>
+        <p>Total <span class="price" style="color:black"><b>{{training.fees}}</b></span></p>
+      <!-- </div> -->
+    </div>
+    </div>
+      <div class="container" align="center" style="margin-left: auto ; margin-right:auto; width:50vw">
+        <form action="" class="form-group">
+        
+          <div class="form-row">
+         
+  
+            <div class="col-sm-12" align="center">
+              <h3>Payment</h3>
+              <label for="fname">Accepted Cards</label>
+              <div class="icon-container">
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+              </div>
+              <label for="cname">Name on Card</label>
+              <input type="text" class="cname" id="cname" name="cardname" required placeholder="Card Holder Name">
+              <label for="ccnum">Credit card number</label>
+              <input type="text" id="ccnum" class="cnum" name="cardnumber" required placeholder="XXXX-XXXX-XXXX-XXXX">
+              <label for="expmonth">Exp Month</label>
+              <input type="text" id="expmonth" class="expmonth" name="expmonth" required placeholder="Month">
+              <div class="row">
+                <div class="col-sm-6" align="center">
+                  <label for="expyear">Exp Year</label>
+                  <input type="text" id="expyear" class="expyear" style="margin-left:10px;" required name="expyear" placeholder="Year">
+                </div>
+                <div class="col-sm-6"  align="center">
+                  <label for="cvv">CVV</label>
+                   <input type="text" style="margin-left:10px;" class="cvv" id="cvv" name="cvv" required placeholder="***">
+                </div>
+              </div>
+            </div>
+            
+          </div>
+       
+          <input type="submit" (click)="func()" value="Continue to checkout" class="btn btn-primary">
+        </form>
+      </div>
+
+    </div>
+  </body>
+  

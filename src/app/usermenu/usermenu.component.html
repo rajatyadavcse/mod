@@ -1,0 +1,65 @@
+<div class="text-center content">
+
+        <div class="jumbotron jumbotron-fluid">
+          <div class="topnav" id="myTopnav">
+            <a routerLink='/usermenu' class="active">Home</a>
+             
+             
+            <a routerLink="/usercompletedtraining">Completed Trainings</a>
+            <a routerLink="/usercurrenttraining">Current Trainings</a>
+            <a (click)="logout()"style="float:right">Logout</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction('myTopnav')">
+                <!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="32px" id="Layer_1" fill="white" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+            </a>
+          </div>
+          <div class="container" >
+            <h2 class="display-4">Search Trainings</h2>
+            <form class="form-signin">
+                <label for="SearchTraining" class="sr-only">Search Training</label>
+                <select name="SearchTraining" [(ngModel)]="techName" class="form-control" required> 
+                  <option [ngValue]="undefined" selected disabled>Search</option>
+                  <!-- <div *ngFor="let tech of technolgy"> -->
+                  <option *ngFor="let tech of technology" [ngValue]="tech.techName">{{tech.techName}}</option>
+
+                  <!-- <option value="Dotnet Full Stack">Dotnet Full Stack</option>
+                  <option value="Cloud Computing">Cloud Computing</option> -->
+
+                </select>
+                <br>
+                <label for="startDate" class="sr-only">Start Date</label>
+                <input type="date" value="1990-01-01" [(ngModel)]="training.startDate" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" name="startDate" id="startDate" class="form-control" placeholder="Start Date">
+                <br>
+                <label for="endDate" class="sr-only">End Date</label>
+                <input type="date" value="1990-01-01" name="endDate" id="endDate" [(ngModel)]="training.endDate" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" placeholder="StartDate">
+                <button class="btn btn-lg btn-primary btn-block" style="margin-top:10px; background-color:#333;" type="button" (click)="search()">Search</button>
+            </form>
+         </div>
+
+          
+        </div>
+
+        <div class="table-responsive-md" *ngIf="show" style="width:60vw;">
+            <table class="table table-hover" >
+            <thead class="table-dark">
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Mentor Name</th>
+                <th scope="col">Average Rating</th>
+                <th scope="col">Experience</th>
+                <th scope="col">Skills</th>
+                <th scope="col">Register</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let train of trainings; index as i">
+                <th scope="row">{{i+1}}</th>
+                <td><button style="border:none; color:blue;  background-color: transparent;" (click)="tprofile(train.mentor.id)">{{train.mentor.firstName}} {{train.mentor.lastName}}</button></td>
+                <td>{{train.mentor.rating}}</td>
+                <td>{{train.mentor.yearsOfExperience}}</td>
+                <td><span *ngFor="let skill of train.skill">{{skill.name}}, </span></td>
+                <td><button class="btn btn-success" (click)="register(train.id)">Register</button> </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>

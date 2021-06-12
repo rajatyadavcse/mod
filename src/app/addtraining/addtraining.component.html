@@ -1,0 +1,106 @@
+<body class="text-center noscroll">
+
+    
+    <div class="topnav" id="myTopnav">
+      <a routerLink="/adminmenu" >Home</a>
+      <a routerLink="/addedittechnology">Add/Edit Technologies</a>
+      <a routerLink="/addeditskills">Add/Edit Skills</a>
+      <a routerLink="/blockuser">Block/Unblock User</a>
+      <a routerLink="/blockmentor">Block/Unblock Mentor</a>
+      <a routerLink="/addedittraining"  class="active">Add/Edit Training</a>
+      
+      <a (click)="logout()" style="float:right">Logout</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction('myTopnav')">
+      <!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="32px" id="Layer_1" fill="white" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+      </a>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Add/Edit Training</h1>
+      <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+    </div>
+</div>
+<div class="table-responsive-md" style="width:60vw;">
+        <table class="table table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Mentor Name</th>
+            <th scope="col">Amount Received</th>
+            <th scope="col">Commission Amount</th>
+            <th scope="col">Fees</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Progress</th>
+            <th scope="col">Rating</th>
+            <!-- <th scope="col">Remove</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let train of trainings; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{train.mentor.firstName}} {{train.mentor.lastName}}</td>
+            <td>₹ {{train.amountRecieved}}</td>
+            <td>₹ {{train.commisionAmount}}</td>
+            <td>₹ {{train.fees}}</td>
+            <td>{{train.startDate | date}}</td>
+            <td>{{train.endDate | date}}</td>
+            <td>{{train.progress}}</td>
+            <td>{{train.rating}}</td>
+            <!-- <td><button class="btn btn-success" (click)="deleteTraining(train)">Remove</button> </td> -->
+          </tr>
+          <!-- <tr>
+            <th scope="row">2</th>
+            <td>HTML</td>
+            <td>5000</td>
+            <td><button class="btn btn-success">Change Fees</button> </td>
+            <td><button class="btn btn-success">Remove</button> </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Angular</td>
+            <td>5000</td>
+            <td><button class="btn btn-success">Change Fees</button> </td>
+            <td><button class="btn btn-success">Remove</button> </td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+    <form class="sign-in">
+            <label for="fees" class="sr-only">fees</label>
+            <input type="number" name="fees" placeholder="Fees" class="form-control" [(ngModel)]="training.fees" required>
+            <br>
+            <label for="commissionAmount" class="sr-only">commissionAmount</label>
+            <input type="number" name="commissionAmount" placeholder="Commission Amount" class="form-control" [(ngModel)]="training.commissionAmount" required>
+            <br>
+            <label for="startDate" class="sr-only">startDate</label>
+            <input type="date" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" name="startDate" placeholder="Start Date" [(ngModel)]="training.startDate" required>
+            <br>
+            <label for="endDate" class="sr-only">endDate</label>
+            <input type="date" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')" name="startDate" placeholder="End Date" [(ngModel)]="training.endDate" required>
+            <br>
+            
+            <label for="Mentor" class="sr-only">Mentor</label>
+            <select name="Mentor" [(ngModel)]="training.mentor" class="form-control" required> 
+              <option [ngValue]="undefined" hidden selected disabled>Mentor</option>
+              <option *ngFor="let ment of mentors" [ngValue]="ment">{{ment.firstName}}</option>
+            </select>
+            <br>
+            <label for="Technology" class="sr-only">Technology</label>
+            <select name="Technology" [(ngModel)]="training.technology" class="form-control" required> 
+              <option [ngValue]="undefined" hidden selected disabled>Technology</option>
+              <option *ngFor="let tech of technologies" [ngValue]="tech">{{tech.techName}}</option>
+            </select>
+            <br>
+            
+             <label for="Skill" class="sr-only">Skill</label>
+            <select name="Skill" [(ngModel)]="training.skill" class="form-control" multiple required> 
+              <option [ngValue]="undefined" hidden selected disabled>Skill</option>
+              <option *ngFor="let ski of skills" [ngValue]="ski">{{ski.name}}</option>
+            </select>
+            
+           
+            <button class="btn btn-lg btn-primary btn-block" style="margin-top:10px; background-color:#333;" (click)="createTraining(training)" type="button">Add Training</button>
+    </form>
+</body>
