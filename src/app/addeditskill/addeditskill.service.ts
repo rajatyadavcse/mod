@@ -9,7 +9,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AddeditskillService {
-  private skillUrl="http://localhost:8022/skills";
+  private skillUrl="https://modbackend.herokuapp.com/skills";
   constructor(private http: HttpClient) { }
   public getSkills(){
     return this.http.get<Skill[]>(this.skillUrl);

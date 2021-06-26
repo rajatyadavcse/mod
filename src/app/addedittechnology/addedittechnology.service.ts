@@ -16,7 +16,7 @@ const httpOptions = {
     technologly: Technology=new Technology();
     constructor(private http:HttpClient) {}
   
-    private technologyUrl = 'http://localhost:8022/technologies';
+    private technologyUrl = 'https://modbackend.herokuapp.com/technologies';
     //private userUrl = '/api';
   
     public getTechnology() {

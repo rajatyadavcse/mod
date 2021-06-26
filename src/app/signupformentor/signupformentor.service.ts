@@ -15,7 +15,7 @@ const httpOptions = {
   
     constructor(private http:HttpClient) {}
   
-    private mentorUrl = 'http://localhost:8022/mentors';
+    private mentorUrl = 'https://modbackend.herokuapp.com/mentors';
     //private userUrl = '/api';
 
   

@@ -12,8 +12,8 @@ const httpOptions = {
 export class TrainerprofileService {
   constructor(private http:HttpClient) {}
   
-  private mentorUrl= 'http://localhost:8022/mentors';
-  private trainingUrl='http://localhost:8022/trainings/findTrainingByMentorId';
+  private mentorUrl= 'https://modbackend.herokuapp.com/mentors';
+  private trainingUrl='https://modbackend.herokuapp.com/trainings/findTrainingByMentorId';
   
   getMentor(mentorId){
     return this.http.get<Mentor>(this.mentorUrl+"/"+mentorId);

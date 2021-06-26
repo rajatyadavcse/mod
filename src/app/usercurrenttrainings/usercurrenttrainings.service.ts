@@ -12,7 +12,7 @@ const httpOptions = {
 export class UsercurrenttrainingsService {
 
   constructor(private http:HttpClient) { }
-  private trainingUrl = 'http://localhost:8022/trainings';
+  private trainingUrl = 'https://modbackend.herokuapp.com/trainings';
     user=JSON.parse(sessionStorage.getItem("name"));
     id=this.user.id;
     public getTrainings() {

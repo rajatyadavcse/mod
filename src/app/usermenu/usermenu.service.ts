@@ -12,9 +12,9 @@ const httpOptions = {
 export class UsermenuService {
   constructor(private http:HttpClient) {}
   
-  private trainingUrl = 'http://localhost:8022/trainings';
+  private trainingUrl = 'https://modbackend.herokuapp.com/trainings';
   //private userUrl = '/api';
-  private technologyUrl= 'http://localhost:8022/technologies';
+  private technologyUrl= 'https://modbackend.herokuapp.com/technologies';
   public getCompletedTrainings() {
     return this.http.get<Training[]>(this.trainingUrl);
   }

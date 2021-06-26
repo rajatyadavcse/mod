@@ -10,8 +10,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PaymentService {
-  trainingUrl='http://localhost:8022/trainings';
-  paymentUrl="http://localhost:8022/payments";
+  trainingUrl='https://modbackend.herokuapp.com/trainings';
+  paymentUrl="https://modbackend.herokuapp.com/payments";
     constructor(private http:HttpClient) { }
   getTraining(id){
     return this.http.get<Training>(this.trainingUrl+"/"+id);

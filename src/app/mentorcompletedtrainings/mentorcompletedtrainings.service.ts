@@ -11,7 +11,7 @@ const httpOptions = {
 export class MentorcompletedtrainingsService {
 
   constructor(private http:HttpClient) { }
-  private trainingUrl = 'http://localhost:8022/trainings';
+  private trainingUrl = 'https://modbackend.herokuapp.com/trainings';
     //private userUrl = '/api';
     user=JSON.parse(sessionStorage.getItem("name"));
     id=this.user.id;

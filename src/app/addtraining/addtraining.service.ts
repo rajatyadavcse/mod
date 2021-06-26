@@ -19,10 +19,10 @@ const httpOptions = {
     training: Training=new Training();
     constructor(private http:HttpClient) {}
   
-    private trainingUrl = 'http://localhost:8022/trainings';
-    private technologyUrl= 'http://localhost:8022/technologies';
-    private mentorUrl='http://localhost:8022/mentors';
-    private skillUrl='http://localhost:8022/skills';
+    private trainingUrl = 'https://modbackend.herokuapp.com/trainings';
+    private technologyUrl= 'https://modbackend.herokuapp.com/technologies';
+    private mentorUrl='https://modbackend.herokuapp.com/mentors';
+    private skillUrl='https://modbackend.herokuapp.com/skills';
     //private userUrl = '/api';
   
     public getTrainings() {

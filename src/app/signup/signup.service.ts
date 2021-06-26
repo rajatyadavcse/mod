@@ -15,7 +15,7 @@ const httpOptions = {
   
     constructor(private http:HttpClient) {}
   
-    private userUrl = 'http://localhost:8022/users';
+    private userUrl = 'https://modbackend.herokuapp.com/users';
     //private userUrl = '/api';
   
     public getUsers() {

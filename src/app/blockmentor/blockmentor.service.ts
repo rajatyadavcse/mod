@@ -10,7 +10,7 @@ const httpOptions = {
 export class BlockmentorService {
 
   constructor(private http:HttpClient) { }
-  private mentorUrl="http://localhost:8022/mentors";
+  private mentorUrl="https://modbackend.herokuapp.com/mentors";
   
   public getMentors() {
     return this.http.get<Mentor[]>(this.mentorUrl);
